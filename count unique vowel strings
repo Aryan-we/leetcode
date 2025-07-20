@@ -1,0 +1,17 @@
+from collections import Counter
+
+def fac(n):
+    if(n==0 or n==1):
+        return 1
+    return n*fac(n-1)
+s="aryandubey"
+vowels=['a','e','i','o','u']
+c=Counter(s)
+present_vowel=[v for v in vowels if c[v]>0]
+a=1
+for i in present_vowel:
+    a*=c[i]
+
+f=fac(len(present_vowel))
+
+print(a*f)
